@@ -1,0 +1,30 @@
+server:
+  port: 8094
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /seata
+
+dubbo:
+  application:
+    name: seata
+  consumer:
+    check: false
+  registry:
+    check: false
+    protocol: zookeeper
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: seata
+    port: 18094
+
+seata:
+  enabled: true
+  application-id: ${spring.application.name}  #可自定义
+  tx-service-group: my_test_tx_group #事务组名可自定义，但必须与配置中心参数一致
+  enable-auto-data-source-proxy: true #数据源自动代理
+  service:
+    grouplist:
+      default: 127.0.0.1:8091
+
+

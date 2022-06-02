@@ -1,0 +1,22 @@
+package com.bruce.seata.demo;
+
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @Copyright Copyright © 2022 fanzh . All rights reserved.
+ * @Desc
+ * @ProjectName seata-demo
+ * @Date 2022/6/2 14:12
+ * @Author fzh
+ */
+@SpringBootApplication
+@EnableDubbo
+public class WebApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebApplication.class, args);
+    }
+
+}

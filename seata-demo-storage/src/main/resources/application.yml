@@ -1,0 +1,34 @@
+server:
+  port: 8093
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /storage
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/seata-demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:sqlmap/auto/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+dubbo:
+  application:
+    name: storage
+  consumer:
+    check: false
+  registry:
+    check: false
+    protocol: zookeeper
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 18093
+
+    
+
+
