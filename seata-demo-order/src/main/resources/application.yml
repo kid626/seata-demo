@@ -23,8 +23,8 @@ dubbo:
     check: false
   registry:
     check: false
-    protocol: zookeeper
-    address: zookeeper://127.0.0.1:2181
+    protocol: nacos
+    address: nacos://127.0.0.1:8848?namespace=f3972b84-6d85-4b31-b0d3-88e8079cc23a
   protocol:
     name: dubbo
     port: 18082
