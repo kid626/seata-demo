@@ -31,6 +31,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency> <!-- 主要想使用 seata 1.1.0 版本 -->
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
+        </dependency>
     </dependencies>
 
 

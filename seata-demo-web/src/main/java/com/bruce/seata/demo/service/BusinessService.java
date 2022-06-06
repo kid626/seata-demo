@@ -23,7 +23,7 @@ public class BusinessService {
     /**
      * 采购
      */
-    @GlobalTransactional
+    @GlobalTransactional(name = "my_test_tx_group")
     public void purchase(String userId, String commodityCode, int orderCount) {
         storageService.deduct(commodityCode, orderCount);
         orderService.create(userId, commodityCode, orderCount);

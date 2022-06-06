@@ -29,6 +29,17 @@ dubbo:
     name: dubbo
     port: 18080
 
-
+seata:
+  enabled: true
+  application-id: account  #可自定义
+  tx-service-group: my_test_tx_group #事务组名可自定义，但必须与配置中心参数一致
+  enable-auto-data-source-proxy: true #数据源自动代理
+  service:
+    grouplist:
+      default: 127.0.0.1:8091
+    vgroup-mapping:
+      my_test_tx_group: default
+    enable-degrade: false
+    disable-global-transaction: false
 
 
