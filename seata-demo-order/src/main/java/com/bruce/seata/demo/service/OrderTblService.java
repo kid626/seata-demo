@@ -9,4 +9,9 @@ package com.bruce.seata.demo.service;
  */
 public interface OrderTblService {
 
+    String createLocal(String userId, String commodityCode, int orderCount);
+
+
+    void unCreate(String orderId);
+
 }

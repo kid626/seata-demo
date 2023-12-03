@@ -9,4 +9,14 @@ package com.bruce.seata.demo.service;
  */
 public interface AccountTblService  {
 
+    /**
+     * 从用户账户中借出
+     */
+    void debit(String userId, int money);
+
+    /**
+     * 从用户账户中借出
+     */
+    void unDebit(String userId, int money);
+
 }

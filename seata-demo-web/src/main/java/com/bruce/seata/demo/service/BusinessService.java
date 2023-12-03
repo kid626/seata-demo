@@ -34,6 +34,9 @@ public class BusinessService {
     private OrderService orderService;
 
     @Resource
+    private TccService tccService;
+
+    @Resource
     private StorageTblMapper storageTblMapper;
     @Resource
     private AccountTblMapper accountTblMapper;
@@ -186,7 +189,7 @@ public class BusinessService {
     }
 
     /**
-     * 下单分布式事务
+     * 下单分布式事务 AT
      */
     @GlobalTransactional(name = "my_test_tx_group")
     public void purchaseV3(String userId, String commodityCode, int orderCount) {
@@ -194,4 +197,11 @@ public class BusinessService {
         orderService.create(userId, commodityCode, orderCount);
     }
 
+    /**
+     * 下单分布式事务 TCC
+     */
+    @GlobalTransactional
+    public void purchaseV4(String userId, String commodityCode, Integer orderCount) {
+        tccService.prepare(null, commodityCode, orderCount, userId);
+    }
 }

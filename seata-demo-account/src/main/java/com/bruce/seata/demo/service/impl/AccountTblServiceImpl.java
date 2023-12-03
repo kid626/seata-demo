@@ -40,4 +40,13 @@ public class AccountTblServiceImpl implements AccountService, AccountTblService 
         mapper.updateById(accountTbl);
 
     }
+
+    @Override
+    public void unDebit(String userId, int money) {
+        LambdaQueryWrapper<AccountTbl> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.eq(AccountTbl::getUserId, userId);
+        AccountTbl accountTbl = mapper.selectOne(lambdaQuery);
+        accountTbl.setMoney(accountTbl.getMoney() + money);
+        mapper.updateById(accountTbl);
+    }
 }

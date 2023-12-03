@@ -45,4 +45,22 @@ public class OrderTblServiceImpl implements OrderService, OrderTblService {
 
     }
 
+    @Override
+    public String createLocal(String userId, String commodityCode, int orderCount) {
+        // 暂定单价为 1
+        int orderMoney = 1 * orderCount;
+
+        OrderTbl order = new OrderTbl();
+        order.setUserId(userId);
+        order.setCommodityCode(commodityCode);
+        order.setCount(orderCount);
+        order.setMoney(orderMoney);
+        mapper.insert(order);
+        return order.getId() + "";
+    }
+
+    @Override
+    public void unCreate(String orderId) {
+        mapper.deleteById(orderId);
+    }
 }
