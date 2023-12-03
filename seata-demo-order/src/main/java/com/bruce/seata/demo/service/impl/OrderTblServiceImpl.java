@@ -1,9 +1,9 @@
 package com.bruce.seata.demo.service.impl;
 
-import com.bruce.seata.demo.service.AccountService;
-import com.bruce.seata.demo.service.OrderService;
 import com.bruce.seata.demo.mapper.OrderTblMapper;
 import com.bruce.seata.demo.model.po.OrderTbl;
+import com.bruce.seata.demo.service.AccountService;
+import com.bruce.seata.demo.service.OrderService;
 import com.bruce.seata.demo.service.OrderTblService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -44,4 +44,5 @@ public class OrderTblServiceImpl implements OrderService, OrderTblService {
         mapper.insert(order);
 
     }
+
 }

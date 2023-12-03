@@ -39,4 +39,16 @@ public class StorageTblServiceImpl implements StorageService, StorageTblService 
         storageTbl.setCount(storageTbl.getCount() - count);
         mapper.updateById(storageTbl);
     }
+
+    @Override
+    public void undoDeduct(String commodityCode, int count) {
+        LambdaQueryWrapper<StorageTbl> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.eq(StorageTbl::getCommodityCode, commodityCode);
+        StorageTbl storageTbl = mapper.selectOne(lambdaQuery);
+        if (storageTbl == null) {
+            throw new RuntimeException("商品不存在!");
+        }
+        storageTbl.setCount(storageTbl.getCount() + count);
+        mapper.updateById(storageTbl);
+    }
 }

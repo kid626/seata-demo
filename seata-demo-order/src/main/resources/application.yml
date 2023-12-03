@@ -36,7 +36,7 @@ seata:
   enable-auto-data-source-proxy: true #数据源自动代理
   service:
     grouplist:
-      default: 127.0.0.1:8091
+      default: 172.22.12.48:8091
     vgroup-mapping:
       my_test_tx_group: default
     enable-degrade: false

@@ -45,3 +45,7 @@ CREATE TABLE `account_tbl`
     `money`   int(11) DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `seata-demo`.`account_tbl`(`id`, `user_id`, `money`) VALUES (1, '1', 10000);
+INSERT INTO `seata-demo`.`storage_tbl`(`id`, `commodity_code`, `count`) VALUES (1, 'book', 10);

@@ -14,4 +14,8 @@ public interface StorageService {
      */
     void deduct(String commodityCode, int count);
 
+    /**
+     * 手动回滚
+     */
+    void undoDeduct(String commodityCode, int orderCount);
 }
