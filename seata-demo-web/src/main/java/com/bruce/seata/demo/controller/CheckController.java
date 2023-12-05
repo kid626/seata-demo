@@ -39,4 +39,11 @@ public class CheckController {
         return money + "";
     }
 
+    @GetMapping("/reset")
+    @ApiOperation("重置")
+    public String reset() {
+        businessService.reset();
+        return "success";
+    }
+
 }

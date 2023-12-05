@@ -204,4 +204,19 @@ public class BusinessService {
     public void purchaseV4(String userId, String commodityCode, Integer orderCount) {
         tccService.prepare(null, commodityCode, orderCount, userId);
     }
+
+    public void reset() {
+        StorageTbl storageTbl = new StorageTbl();
+        storageTbl.setId(1);
+        storageTbl.setCommodityCode("book");
+        storageTbl.setCount(10);
+        storageTblMapper.updateById(storageTbl);
+
+        AccountTbl accountTbl = new AccountTbl();
+        accountTbl.setId(1);
+        accountTbl.setUserId("1");
+        accountTbl.setMoney(5);
+        accountTblMapper.updateById(accountTbl);
+
+    }
 }
